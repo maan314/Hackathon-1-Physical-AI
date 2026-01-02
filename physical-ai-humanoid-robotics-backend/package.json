@@ -1,0 +1,16 @@
+{
+  "name": "physical-ai-humanoid-robotics-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Physical AI & Humanoid Robotics Textbook",
+  "main": "index.js",
+  "scripts": {
+    "dev": "uvicorn src.main:app --reload",
+    "start": "uvicorn src.main:app",
+    "test": "pytest"
+  },
+  "keywords": ["ai", "robotics", "textbook", "api"],
+  "author": "Muhammad Usman",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
