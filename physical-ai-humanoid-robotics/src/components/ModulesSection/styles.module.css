@@ -1,0 +1,85 @@
+.modulesSection {
+  padding: 4rem 2rem;
+  width: 100%;
+  background: var(--ai-robotics-bg-gradient);
+}
+
+.modulesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.moduleCard {
+  background: var(--ai-robotics-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ai-robotics-card-border);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.moduleCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--ai-robotics-glow);
+  background: rgba(45, 55, 75, 0.8);
+}
+
+.moduleIcon {
+  margin-bottom: 1.5rem;
+  color: #a78bfa;
+}
+
+.moduleTitle {
+  color: #c4b5fd;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.moduleDescription {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+  .modulesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .modulesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modulesSection {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modulesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .moduleCard {
+    padding: 1.5rem;
+  }
+}

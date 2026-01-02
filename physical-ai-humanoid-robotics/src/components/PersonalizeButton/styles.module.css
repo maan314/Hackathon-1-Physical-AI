@@ -1,0 +1,18 @@
+.personalizeButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  background-color: var(--ifm-color-emphasis-200);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.personalizeButton:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.personalized {
+  background-color: #4a90e2;
+  color: white;
+}

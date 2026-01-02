@@ -1,0 +1,848 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #e9d5ff;
+  --ifm-color-secondary: #ec4899;
+  --ifm-color-secondary-dark: #db2777;
+  --ifm-color-secondary-darker: #be185d;
+  --ifm-color-secondary-darkest: #9d174d;
+  --ifm-color-secondary-light: #f472b6;
+  --ifm-color-secondary-lighter: #f9a8d4;
+  --ifm-color-secondary-lightest: #fce7f3;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom theme variables */
+  --ai-robotics-bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --ai-robotics-card-bg: rgba(30, 41, 59, 0.7);
+  --ai-robotics-card-border: rgba(139, 92, 246, 0.3);
+  --ai-robotics-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+  --ai-robotics-glass-bg: rgba(15, 23, 42, 0.7);
+  --ai-robotics-glass-border: rgba(255, 255, 255, 0.1);
+  --ai-robotics-glass-backdrop: blur(12px);
+}
+
+/* Light mode theme variables */
+:root[data-theme='light'] {
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4a1d96;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ede9fe;
+  --ifm-color-secondary: #db2777;
+  --ifm-color-secondary-dark: #be185d;
+  --ifm-color-secondary-darker: #9d174d;
+  --ifm-color-secondary-darkest: #7f1d38;
+  --ifm-color-secondary-light: #f472b6;
+  --ifm-color-secondary-lighter: #f9a8d4;
+  --ifm-color-secondary-lightest: #fce7f3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom light theme variables */
+  --ai-robotics-bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  --ai-robotics-card-bg: rgba(255, 255, 255, 0.8);
+  --ai-robotics-card-border: rgba(124, 58, 237, 0.2);
+  --ai-robotics-glow: 0 0 20px rgba(124, 58, 237, 0.2);
+  --ai-robotics-glass-bg: rgba(255, 255, 255, 0.9);
+  --ai-robotics-glass-border: rgba(0, 0, 0, 0.1);
+  --ai-robotics-glass-backdrop: blur(12px);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+  --ifm-color-secondary: #f472b6;
+  --ifm-color-secondary-dark: #ec4899;
+  --ifm-color-secondary-darker: #db2777;
+  --ifm-color-secondary-darkest: #be185d;
+  --ifm-color-secondary-light: #f9a8d4;
+  --ifm-color-secondary-lighter: #fbcfe8;
+  --ifm-color-secondary-lightest: #fee2e2;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom dark theme variables */
+  --ai-robotics-bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --ai-robotics-card-bg: rgba(30, 41, 59, 0.7);
+  --ai-robotics-card-border: rgba(139, 92, 246, 0.3);
+  --ai-robotics-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+  --ai-robotics-glass-bg: rgba(15, 23, 42, 0.7);
+  --ai-robotics-glass-border: rgba(255, 255, 255, 0.1);
+  --ai-robotics-glass-backdrop: blur(12px);
+}
+
+/* Custom styles for Physical AI textbook */
+/* 3D card effects for module navigation */
+.module-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Depth and shadow effects */
+.depth-layer-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.depth-layer-2 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.depth-layer-3 {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Book-like reading flow */
+.book-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Personalization and translation buttons */
+.personalize-button, .translate-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  background-color: var(--ifm-color-emphasis-200);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.personalize-button:hover, .translate-button:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+/* Transparent navbar with backdrop blur */
+.navbar {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+}
+
+.navbar__inner {
+  background: transparent !important;
+}
+
+.navbar__title {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar__link:hover {
+  color: #a78bfa !important;
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 8px 20px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.button--secondary:hover {
+  background: rgba(167, 139, 250, 0.2) !important;
+  border-color: rgba(167, 139, 250, 0.4) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Floating RAG chatbot container */
+.floating-chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 300px;
+  height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background-color: var(--ai-robotics-glass-bg);
+  backdrop-filter: var(--ai-robotics-glass-backdrop);
+  border: 1px solid var(--ai-robotics-glass-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark mode for chatbot */
+[data-theme='dark'] .floating-chatbot {
+  background-color: var(--ai-robotics-glass-bg);
+  border: 1px solid var(--ai-robotics-glass-border);
+}
+
+/* Chatbot header styling */
+.chatbotHeader {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
+  color: white !important;
+  padding: 0.75rem !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border: none !important;
+}
+
+[data-theme='light'] .chatbotHeader {
+  background: linear-gradient(135deg, #a78bfa, #c4b5fd) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.chatbotHeader h4 {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  margin-right: 0.5rem !important;
+}
+
+[data-theme='light'] .chatbotHeader h4 {
+  color: white !important;
+}
+
+.toggleButton {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  color: white !important;
+}
+
+[data-theme='light'] .toggleButton {
+  color: white !important;
+}
+
+/* Chatbot icon styling */
+.chatbotIcon {
+  margin-right: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.chatbotIcon svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+[data-theme='light'] .chatbotIcon svg {
+  fill: white !important;
+  stroke: white !important;
+}
+
+/* Custom admonitions for robotics content */
+.roboto-admonition {
+  border-left: 4px solid #2e8555;
+  background-color: rgba(46, 133, 85, 0.05);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Hardware-focused admonitions */
+.hardware-note {
+  border-left: 4px solid #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.05);
+}
+
+.simulation-note {
+  border-left: 4px solid #4ecdc4;
+  background-color: rgba(78, 205, 196, 0.05);
+}
+
+/* Typography enhancements */
+body {
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Color adjustments for different themes */
+[data-theme='dark'] p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme='light'] p {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme='dark'] h1, [data-theme='dark'] h2, [data-theme='dark'] h3, [data-theme='dark'] h4, [data-theme='dark'] h5, [data-theme='dark'] h6 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] h4, [data-theme='light'] h5, [data-theme='light'] h6 {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Ensure proper text colors in light mode for various components */
+[data-theme='light'] .heroText h1,
+[data-theme='light'] .heroText p,
+[data-theme='light'] .moduleCard h3,
+[data-theme='light'] .moduleCard p,
+[data-theme='light'] .featureCard h3,
+[data-theme='light'] .featureCard p {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Ensure proper card backgrounds in light mode */
+[data-theme='light'] .moduleCard,
+[data-theme='light'] .featureCard,
+[data-theme='light'] .infoCard,
+[data-theme='light'] .card {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Ensure proper footer colors in light mode */
+[data-theme='light'] .footer {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+[data-theme='light'] .footer__title,
+[data-theme='light'] .footer__link-item,
+[data-theme='light'] .footer__copyright {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Ensure proper sidebar colors in light mode */
+[data-theme='light'] .menu__link {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme='light'] .menu__link--active {
+  color: #7c3aed !important;
+}
+
+/* Ensure proper doc page content colors in light mode */
+[data-theme='light'] .docItemContainer {
+  background: var(--ai-robotics-glass-bg) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Global body background */
+body {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+/* Custom container backgrounds */
+.container {
+  background: transparent !important;
+}
+
+/* Ensure full background for all pages */
+.main-wrapper {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+/* Ensure textbook page content area has consistent background */
+.doc-page,
+.docs-page,
+.theme-doc-page {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+/* Ensure content containers have transparent background to show gradient */
+.markdown,
+.theme-doc-markdown,
+.theme-code-block {
+  background: transparent !important;
+}
+
+/* Ensure page content area is consistent */
+.content {
+  background: transparent !important;
+}
+
+/* Ensure documentation page containers have proper background */
+.docMainContainer,
+.doc-page,
+.docs-wrapper,
+.main-wrapper {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+/* Ensure doc item container has glass background */
+.docItemContainer {
+  background: var(--ai-robotics-glass-bg) !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  border: 1px solid var(--ai-robotics-glass-border) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Enhanced card styles */
+.card {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+}
+
+/* Enhanced card styles in light mode */
+[data-theme='light'] .card,
+[data-theme='light'] .moduleCard,
+[data-theme='light'] .featureCard,
+[data-theme='light'] .infoCard {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme='light'] .card:hover,
+[data-theme='light'] .moduleCard:hover,
+[data-theme='light'] .featureCard:hover,
+[data-theme='light'] .infoCard:hover {
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Enhanced hero section in light mode */
+[data-theme='light'] .heroBanner {
+  background: var(--ai-robotics-bg-gradient) !important;
+}
+
+/* Enhanced module cards in light mode */
+[data-theme='light'] .moduleCards,
+[data-theme='light'] .featuresGrid {
+  gap: 2rem !important;
+}
+
+/* Enhanced floating elements in light mode */
+[data-theme='light'] .floating-element,
+[data-theme='light'] .floatingElement {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Enhanced button styles */
+.button {
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+}
+
+/* Enhanced button styles in light mode */
+[data-theme='light'] .button {
+  background: rgba(124, 58, 237, 0.15) !important;
+  border: 1px solid rgba(124, 58, 237, 0.3) !important;
+  color: #7c3aed !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2) !important;
+}
+
+[data-theme='light'] .button:hover {
+  background: rgba(124, 58, 237, 0.25) !important;
+  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3) !important;
+}
+
+[data-theme='light'] .button--secondary {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(124, 58, 237, 0.3) !important;
+  color: #7c3aed !important;
+}
+
+[data-theme='light'] .button--secondary:hover {
+  background: #7c3aed !important;
+  color: white !important;
+  border-color: #7c3aed !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Hover animations and floating effects */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulsing-element {
+  animation: pulse 2s infinite;
+}
+
+/* Apply floating effect to hero image */
+.heroImage img {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Enhanced hover effects for interactive elements */
+.navbar__link:hover,
+.menu__link:hover {
+  transform: translateY(-2px) !important;
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.5) !important;
+}
+
+/* Subtle floating effect for all cards */
+.card,
+.featureCard,
+.infoCard {
+  animation: float 10s ease-in-out infinite;
+  animation-delay: calc(var(--delay, 0) * 1s);
+}
+
+/* Specific delays for staggered animation */
+.featureCard:nth-child(1) { --delay: 0; }
+.featureCard:nth-child(2) { --delay: 1; }
+.featureCard:nth-child(3) { --delay: 2; }
+.featureCard:nth-child(4) { --delay: 3; }
+
+/* Sidebar navigation styling */
+.sidebar {
+  background: var(--ai-robotics-glass-bg) !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  border-right: 1px solid var(--ai-robotics-glass-border) !important;
+  border-radius: 0 16px 16px 0 !important;
+  overflow: hidden;
+}
+
+.menu {
+  background: transparent !important;
+}
+
+.menu__list {
+  padding: 1rem !important;
+}
+
+.menu__link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 8px !important;
+  margin: 0.25rem 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.menu__link:hover {
+  background: rgba(167, 139, 250, 0.1) !important;
+  color: #a78bfa !important;
+}
+
+.menu__link--active {
+  background: rgba(167, 139, 250, 0.2) !important;
+  color: #c4b5fd !important;
+  font-weight: 500 !important;
+}
+
+/* Docs page content styling */
+.docPage,
+.docs-page {
+  background: transparent !important;
+}
+
+.docItemContainer {
+  background: var(--ai-robotics-glass-bg) !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  border: 1px solid var(--ai-robotics-glass-border) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Code blocks styling */
+.prism-code {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid var(--ai-robotics-glass-border) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  overflow: auto !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* Tables styling */
+.table-wrapper {
+  overflow: auto;
+  margin: 1.5rem 0;
+}
+
+table {
+  background: var(--ai-robotics-glass-bg) !important;
+  border: 1px solid var(--ai-robotics-glass-border) !important;
+  border-radius: 12px !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  border: 1px solid var(--ai-robotics-glass-border) !important;
+  padding: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+table th {
+  background: rgba(167, 139, 250, 0.1) !important;
+  color: #c4b5fd !important;
+  font-weight: 600 !important;
+}
+
+/* Admonitions styling */
+.alert {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  border-left: 4px solid #a78bfa !important;
+  border-radius: 12px !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+  margin: 1.5rem 0 !important;
+}
+
+.alert--info {
+  border-left-color: #60a5fa !important;
+}
+
+.alert--tip {
+  border-left-color: #34d399 !important;
+}
+
+.alert--caution {
+  border-left-color: #fbbf24 !important;
+}
+
+.alert--danger {
+  border-left-color: #f87171 !important;
+}
+
+/* Pagination styling */
+.pagination-nav {
+  margin: 2rem 0 !important;
+}
+
+.pagination-nav__link {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  border-radius: 12px !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  transition: all 0.3s ease !important;
+}
+
+.pagination-nav__link:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--ai-robotics-glow) !important;
+}
+
+.pagination-nav__label {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Search bar styling */
+.navbar__search {
+  margin-left: 1rem !important;
+}
+
+.search-box {
+  position: relative !important;
+}
+
+.search-box input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 20px !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.search-box input:focus {
+  outline: none !important;
+  border-color: #a78bfa !important;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.3) !important;
+}
+
+/* Footer styling */
+.footer {
+  background: var(--ai-robotics-bg-gradient) !important;
+  border-top: 1px solid var(--ai-robotics-card-border) !important;
+  padding: 3rem 0 2rem !important;
+  margin-top: 4rem !important;
+}
+
+.footer__title {
+  color: #c4b5fd !important;
+  font-weight: 600 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer__link-item:hover {
+  color: #a78bfa !important;
+  transform: translateX(3px) !important;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.6) !important;
+  border-top: 1px solid var(--ai-robotics-glass-border) !important;
+  padding-top: 1.5rem !important;
+  margin-top: 2rem !important;
+}
+
+/* Breadcrumbs styling */
+.breadcrumbs {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  border-radius: 8px !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  margin: 1rem 0 !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.breadcrumbs__item {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: #c4b5fd !important;
+  font-weight: 500 !important;
+}
+
+/* TOC (Table of Contents) styling */
+.table-of-contents {
+  background: var(--ai-robotics-card-bg) !important;
+  border: 1px solid var(--ai-robotics-card-border) !important;
+  border-radius: 12px !important;
+  backdrop-filter: var(--ai-robotics-glass-backdrop) !important;
+  padding: 1.5rem !important;
+}
+
+.table-of-contents__link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease !important;
+}
+
+.table-of-contents__link:hover {
+  color: #a78bfa !important;
+}
+
+.table-of-contents__link--active {
+  color: #c4b5fd !important;
+  font-weight: 500 !important;
+}
+
+/* Heading anchors */
+.anchor {
+  text-decoration: none !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.anchor:hover {
+  color: #a78bfa !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 996px) {
+  .floating-chatbot {
+    width: 250px;
+    height: 300px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .docItemContainer {
+    padding: 1.5rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .sidebar {
+    border-radius: 16px 16px 0 0 !important;
+  }
+}

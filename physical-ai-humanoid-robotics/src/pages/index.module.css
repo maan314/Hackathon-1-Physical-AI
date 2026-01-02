@@ -1,0 +1,171 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Hero section with futuristic design */
+.heroBanner {
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--ai-robotics-bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centered hero section */
+.heroSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Centered text content */
+.heroText {
+  color: white;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroText h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroText p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Floating module cards */
+.moduleCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.moduleCard {
+  background: var(--ai-robotics-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ai-robotics-card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--ai-robotics-glow);
+  transition: all 0.3s ease;
+  animation: float 10s ease-in-out infinite;
+  animation-delay: calc(var(--delay, 0) * 1s);
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.moduleCard h3 {
+  color: #a78bfa;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.moduleCard p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Buttons container centered */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Floating element class */
+.floatingElement {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive design for module cards */
+@media screen and (max-width: 1200px) {
+  .moduleCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .heroText h1 {
+    font-size: 3rem;
+  }
+
+  .heroText p {
+    font-size: 1.2rem;
+  }
+
+  .moduleCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 4rem 1rem;
+  }
+
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroText p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .moduleCards {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
